@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Unlock your businesses potential with a full PoS solution | Mzoori
+    </title>
+
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Sora:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13766A",
+              orange: "#FFD40E",
+              green: "#13766A",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Landing Page Header -->
+    <section
+      id="hero"
+      class="flex flex-col items-center justify-center min-h-screen py-40 bg-[url('/img/heroes-bg.gif')] bg-green bg-top bg-no-repeat bg-cover relative"
+    >
+      <!-- Light Accents -->
+      <div
+        class="h-full w-full absolute bg-[url('/img/light-accent.png')] bg-left-top bg-no-repeat z-0"
+        role="presentation"
+      ></div>
+      <div
+        class="h-full w-full absolute bg-[url('/img/light-accent-2.png')] bg-right-bottom bg-no-repeat z-0"
+        role="presentation"
+      ></div>
+      <!-- / End Light Accents -->
+
+      <!-- Logo -->
+      <div class="z-10 flex gap-2 mb-12">
+        <img src="/img/mzoori-logo.svg" class="w-36" alt="Mzoori Logo" />
+        <img src="/img/by-retailpay.svg" class="w-36" alt="by RetailPay Logo" />
+      </div>
+      <!-- / End Logo -->
+
+      <!-- Heading -->
+      <div class="z-10 flex flex-col items-center w-full text-center">
+        <h1
+          class="mb-4 text-7xl font-bold text-white lg:w-[48rem] leading-[4.825rem]"
+        >
+          <span class="text-orange">Unlock your businesses'</span> potential
+          with a full PoS solution.
+        </h1>
+
+        <hr class="mx-auto my-8 w-36" />
+
+        <p class="mb-8 text-2xl text-white">
+          The POS system with everything you need to sell in person,
+          <br />backed by everything you need to sell online.
+        </p>
+
+        <!-- CTA  -->
+        <div class="flex items-center justify-center gap-4">
+          <button
+            type="button"
+            class="px-12 py-2 font-semibold text-white border border-white rounded-full"
+          >
+            Sign in
+          </button>
+          <button
+            type="button"
+            class="px-12 py-2 font-semibold bg-white border rounded-full text-green border-green"
+          >
+            Sign up
+          </button>
+        </div>
+        <!-- / End CTA  -->
+      </div>
+      <!-- / End Heading -->
+    </section>
+
+    <section>
+      <div class="grid grid-cols-2">
+        <div class="space-y-8">
+          <h2 class="text-3xl font-bold">
+            Modern POS software built for your business.
+          </h2>
+
+          <p class="">
+            Introducing a powerful solution that will change how you sell and
+            manage a retail outlet at all levels, from small shops to
+            supermarkets.
+          </p>
+
+          <div class="flex gap-2">
+            <button
+              type="button"
+              class="px-12 py-2 font-semibold text-white border rounded-full bg-green border-green"
+            >
+              Sign up
+            </button>
+
+            <button type="button" class="font-semibold text-green">
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        <div></div>
+      </div>
+    </section>
+  </body>
+</html>
