@@ -40,7 +40,7 @@
     <!-- Landing Page Header -->
     <section
       id="hero"
-      class="flex flex-col items-center justify-center min-h-screen py-40 bg-[url('/img/heroes-bg.gif')] bg-green bg-top bg-no-repeat bg-cover relative"
+      class="flex flex-col items-center justify-center min-h-screen pt-32 pb-56 bg-[url('/img/heroes-bg.gif')] bg-green bg-top bg-no-repeat bg-cover relative"
     >
       <!-- Light Accents -->
       <div
@@ -54,9 +54,13 @@
       <!-- / End Light Accents -->
 
       <!-- Logo -->
-      <div class="z-10 flex gap-2 mb-12">
-        <img src="/img/mzoori-logo.svg" class="w-36" alt="Mzoori Logo" />
-        <img src="/img/by-retailpay.svg" class="w-36" alt="by RetailPay Logo" />
+      <div class="z-10 flex gap-4 mb-12">
+        <img src="./img/mzoori-logo.svg" class="w-36" alt="Mzoori Logo" />
+        <img
+          src="./img/by-retailpay.svg"
+          class="w-36"
+          alt="by RetailPay Logo"
+        />
       </div>
       <!-- / End Logo -->
 
@@ -96,10 +100,12 @@
       <!-- / End Heading -->
     </section>
 
-    <section>
-      <div class="grid grid-cols-2">
-        <div class="space-y-8">
-          <h2 class="text-3xl font-bold">
+    <section class="relative max-w-4xl mx-auto">
+      <div
+        class="grid grid-cols-7 pt-20 pl-20 backdrop-blur-[5rem] border border-[1.7] border-white rounded-lg bg-gradient-to-b from-white/50 from-5% to-110% -mt-28"
+      >
+        <div class="flex flex-col col-span-3 space-y-8">
+          <h2 class="text-4xl font-bold">
             Modern POS software built for your business.
           </h2>
 
@@ -109,7 +115,7 @@
             supermarkets.
           </p>
 
-          <div class="flex gap-2">
+          <div class="flex gap-8">
             <button
               type="button"
               class="px-12 py-2 font-semibold text-white border rounded-full bg-green border-green"
@@ -117,13 +123,19 @@
               Sign up
             </button>
 
-            <button type="button" class="font-semibold text-green">
+            <button type="button" class="py-2 font-semibold text-green">
               Learn More
             </button>
           </div>
         </div>
 
-        <div></div>
+        <div class="col-span-4 relative">
+          <img
+            class="-mt-24 absolute right-0 scale-[1.08] origin-right"
+            src="./img/pos-desktop-mockup.png"
+            alt="POS Machine Desktop"
+          />
+        </div>
       </div>
     </section>
   </body>
