@@ -16,7 +16,7 @@
     />
 
     <!-- TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
 
     <!-- Tailwind Config -->
     <script>
@@ -42,62 +42,96 @@
       src="https://kit.fontawesome.com/c5314f6096.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Smoothscroll -->
+    <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.js"></script>
+
+    <!-- Alpine Plugins -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Alpine Core -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <style>
+      [x-cloak] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <!-- Landing Page Header -->
     <header
       id="hero"
-      class="flex flex-col items-center justify-center min-h-screen pt-32 pb-56 bg-[url('/img/heroes-bg.gif')] bg-green bg-top bg-no-repeat bg-cover relative"
+      class="flex flex-col items-center justify-center min-h-screen pt-24 lg:pt-32 pb-44 lg:pb-56 bg-green bg-top bg-no-repeat bg-cover relative"
     >
       <!-- Light Accents -->
       <div
-        class="h-full w-full absolute bg-[url('/img/light-accent.png')] bg-left-top bg-no-repeat z-0"
+        class="absolute top-0 left-0 right-0 bottom-0 bg-[url('/img/light-accent.png')] bg-left-top bg-no-repeat z-0"
         role="presentation"
       ></div>
       <div
-        class="h-full w-full absolute bg-[url('/img/light-accent-2.png')] bg-right-bottom bg-no-repeat z-0"
+        class="absolute top-0 left-0 right-0 bottom-0 bg-[url('/img/light-accent-2.png')] bg-right-bottom bg-no-repeat z-0"
         role="presentation"
       ></div>
       <!-- / End Light Accents -->
 
       <!-- Logo -->
-      <div class="z-10 flex gap-4 mb-12">
-        <img src="./img/mzoori-logo.svg" class="w-36" alt="Mzoori Logo" />
+      <div class="z-10 flex gap-2 mb-8 lg:gap-4 lg:mb-12">
+        <img
+          src="./img/mzoori-logo.svg"
+          class="w-24 lg:w-36"
+          alt="Mzoori Logo"
+        />
         <img
           src="./img/by-retailpay.svg"
-          class="w-36"
+          class="w-24 lg:w-36"
           alt="by RetailPay Logo"
         />
       </div>
       <!-- / End Logo -->
 
+      <hr class="mx-auto my-8 w-36 border-white/30" />
+
       <!-- Heading -->
-      <div class="z-10 flex flex-col items-center w-full text-center">
+      <div
+        class="z-10 flex flex-col items-center w-full px-4 text-center lg:px-0"
+      >
         <h1
-          class="mb-4 text-7xl font-bold text-white lg:w-[48rem] leading-[4.825rem]"
+          class="mb-4 text-3xl lg:text-7xl font-bold text-white lg:w-[48rem] lg:leading-[4.825rem]"
         >
           <span class="text-orange">Unlock your businesses'</span> potential
           with a full PoS solution.
         </h1>
 
-        <hr class="mx-auto my-8 w-36" />
+        <hr class="mx-auto my-8 w-36 border-white/30" />
 
-        <p class="mb-8 text-2xl text-white">
+        <p class="mb-8 text-white lg:text-2xl">
           The POS system with everything you need to sell in person,
-          <br />backed by everything you need to sell online.
+          <br class="hidden lg:inline" />backed by everything you need to sell
+          online.
         </p>
 
         <!-- CTA  -->
         <div class="flex items-center justify-center gap-4">
           <button
             type="button"
-            class="px-12 py-2 font-semibold text-white border border-white rounded-full"
+            class="px-6 py-2 font-semibold text-white border border-white rounded-full lg:px-12"
           >
             Sign in
           </button>
           <button
             type="button"
-            class="px-12 py-2 font-semibold bg-white border rounded-full text-green border-green"
+            class="px-6 py-2 font-semibold bg-white border border-white rounded-full lg:px-12 text-green"
           >
             Sign up
           </button>
@@ -108,12 +142,12 @@
     </header>
     <!-- /End Landing Page Header -->
 
-    <section class="relative max-w-4xl mx-auto">
+    <section class="relative px-4 mx-auto lg:max-w-6xl">
       <div
-        class="grid grid-cols-7 pt-20 pl-20 backdrop-blur-[5rem] border border-[1.7] border-white rounded-lg bg-gradient-to-b from-white/50 from-5% to-110% -mt-28"
+        class="grid lg:grid-cols-7 pt-12 lg:pt-20 pb-12 lg:pb-36 px-6 lg:pl-20 lg:pr-0 backdrop-blur-[5rem] border border-[1.7] border-white rounded-lg bg-gradient-to-b from-white/50 from-5% to-110% -mt-16 lg:-mt-28 shadow-xl"
       >
-        <div class="flex flex-col col-span-3 space-y-8">
-          <h2 class="text-4xl font-bold">
+        <div class="flex flex-col space-y-6 lg:col-span-3 lg:space-y-8">
+          <h2 class="text-2xl font-bold lg:text-4xl">
             Modern POS software built for your business.
           </h2>
 
@@ -126,7 +160,7 @@
           <div class="flex gap-8">
             <button
               type="button"
-              class="px-12 py-2 font-semibold text-white border rounded-full bg-green border-green"
+              class="px-6 py-2 font-semibold text-white border rounded-full lg:px-12 bg-green border-green"
             >
               Sign up
             </button>
@@ -137,9 +171,9 @@
           </div>
         </div>
 
-        <div class="col-span-4 relative">
+        <div class="relative lg:col-span-4">
           <img
-            class="-mt-24 absolute right-0 scale-[1.08] origin-right"
+            class="mt-12 lg:-mt-24 lg:absolute lg:right-0 lg:scale-[1.08] lg:-top-8 origin-right"
             src="./img/pos-desktop-mockup.png"
             alt="POS Machine Desktop"
           />
@@ -147,10 +181,14 @@
       </div>
     </section>
 
-    <section class="relative max-w-4xl mx-auto mt-12 space-y-28">
-      <article class="grid grid-cols-7 gap-28 px-20 items-center">
-        <div class="order-2 col-span-3">
-          <h2 class="text-3xl font-bold mb-8 mt-20">
+    <section
+      class="relative px-4 mx-auto mt-12 space-y-12 lg:max-w-6xl lg:space-y-28"
+    >
+      <article
+        class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20 lg:gap-28"
+      >
+        <div class="lg:order-2 lg:col-span-3">
+          <h2 class="mt-20 mb-8 text-3xl font-bold">
             Fully integrated hardware
           </h2>
           <p class="text-gray-500">
@@ -159,17 +197,20 @@
             compatible hardware accessories.
           </p>
         </div>
-        <div class="order-1 col-span-4">
+        <div class="lg:order-1 lg:col-span-4">
           <img
             src="./img/pos-desktop-mockup-2.png"
+            class="object-cover"
             alt="pos machine with desktop pc"
           />
         </div>
       </article>
 
-      <article class="grid grid-cols-7 gap-28 px-20 items-center">
-        <div class="col-span-3">
-          <h2 class="text-3xl font-bold mb-8 mt-20">
+      <article
+        class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20 lg:gap-28"
+      >
+        <div class="lg:col-span-3">
+          <h2 class="mt-20 mb-8 text-3xl font-bold">
             Customizable POS terminal
           </h2>
           <p class="text-gray-500">
@@ -178,27 +219,29 @@
             through checkout.
           </p>
         </div>
-        <div class="col-span-4">
+        <div class="lg:col-span-4">
           <img
-            class="scale-150"
+            class="object-cover lg:scale-150"
             src="./img/pos-desktop-mockup-2.png"
             alt="pos machine with desktop pc"
           />
         </div>
       </article>
 
-      <article class="grid grid-cols-7 gap-28 px-20 items-center">
-        <div class="order-2 col-span-3">
-          <h2 class="text-3xl font-bold mb-8 mt-20">Powerful POS software</h2>
+      <article
+        class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20 lg:gap-28"
+      >
+        <div class="lg:order-2 lg:col-span-3">
+          <h2 class="mt-20 mb-8 text-3xl font-bold">Powerful POS software</h2>
           <p class="text-gray-500">
             Turn any mobile device into a powerful point of sale. You can
             download the Mzoori POS app on to any Android or iOS smartphone or
             tablet.
           </p>
         </div>
-        <div class="order-1 col-span-4">
+        <div class="lg:order-1 lg:col-span-4">
           <img
-            class=""
+            class="object-cover"
             src="./img/pos-desktop-mockup-2.png"
             alt="pos machine with desktop pc"
           />
@@ -210,9 +253,9 @@
     <section
       class="max-w-[83%] mt-28 ml-auto rounded-tl-lg rounded-bl-lg bg-gradient-to-b from-green/20 from-5% to-110% shadow-lg"
     >
-      <div class="py-20 px-20 space-y-12">
+      <div class="px-20 py-20 space-y-12">
         <header class="grid grid-cols-2 gap-x-32 max-w-[75%]">
-          <h2 class="font-bold text-4xl">Power your retail business</h2>
+          <h2 class="text-4xl font-bold">Power your retail business</h2>
           <p class="">
             Get the tools you need to run your retail store. Mzoori's all-in-one
             POS system comes with inventory tracking, staff management, and
@@ -221,201 +264,342 @@
         </header>
 
         <!-- Carousel -->
-        <div
-          class="overflow-x-scroll scroll-smooth flex gap-6 snap-start snap-x"
-        >
-          <!-- card -->
+        <div class="relative">
           <div
-            class="bg-lightgreen rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
+            x-data="{
+              currentSlide: 0,
+              skip: 1,
+              atBeginning: false,
+              atEnd: false,
+              autoSlideInterval: null,
+              startAutoSlide() {
+                  this.autoSlideInterval = setInterval(() => {
+                      this.next();
+                  }, 2500);
+              },
+              stopAutoSlide() {
+                  clearInterval(this.autoSlideInterval);
+              },
+              goToSlide(index) {
+                  let slider = this.$refs.slider;
+                  let offset = slider.firstElementChild.getBoundingClientRect().width;
+                  slider.scrollTo({ left: offset * index, behavior: 'smooth' });
+              },
+              next() {
+                  let slider = this.$refs.slider;
+                  let current = slider.scrollLeft;
+                  let offset = slider.firstElementChild.getBoundingClientRect().width;
+                  let maxScroll = offset * (slider.children.length - 1);
+      
+                  current + offset >= maxScroll ? slider.scrollTo({ left: 0, behavior: 'smooth' }) : slider.scrollBy({ left: offset * this.skip, behavior: 'smooth' });
+              },
+              prev() {
+                  let slider = this.$refs.slider;
+                  let current = slider.scrollLeft;
+                  let offset = slider.firstElementChild.getBoundingClientRect().width;
+                  let maxScroll = offset * (slider.children.length - 1);
+      
+                  current <= 0 ? slider.scrollTo({ left: maxScroll, behavior: 'smooth' }) : slider.scrollBy({ left: -offset * this.skip, behavior: 'smooth' });
+              },
+              updateButtonStates() {
+                  let slideEls = this.$el.parentElement.children;
+                  this.atBeginning = slideEls[0] === this.$el;
+                  this.atEnd = slideEls[slideEls.length-1] === this.$el;
+              },
+              focusableWhenVisible: {
+                  'x-intersect:enter'() { this.$el.removeAttribute('tabindex'); },
+                  'x-intersect:leave'() { this.$el.setAttribute('tabindex', '-1'); }
+              },
+              disableNextAndPreviousButtons: {
+                  'x-intersect:enter.threshold.05'() { this.updateButtonStates(); },
+                  'x-intersect:leave.threshold.05'() { this.updateButtonStates(); }
+              },
+              updateCurrentSlide() {
+                  let slider = this.$refs.slider;
+                  let offset = slider.firstElementChild.getBoundingClientRect().width;
+                  this.currentSlide = Math.round(slider.scrollLeft / offset);
+              }
+            }"
+            x-init="startAutoSlide()"
+            @mouseover="stopAutoSlide()"
+            @mouseout="startAutoSlide()"
+            class="relative"
           >
-            <header class="space-y-7">
-              <!-- icon -->
-              <div
-                class="bg-green border-white border inline-block rounded-full p-3"
+            <div
+              x-on:keydown.right="next"
+              x-on:keydown.left="prev"
+              tabindex="0"
+              role="region"
+              aria-labelledby="carousel-label"
+            >
+              <ul
+                x-ref="slider"
+                class="flex w-full gap-6 overflow-x-hidden scroll-smooth snap-mandatory snap-x relative"
+                @scroll="updateCurrentSlide"
+                tabindex="0"
+                role="listbox"
+                aria-labelledby="carousel-content-label"
               >
-                <img src="./img/shield.svg" alt="shield icon" />
-              </div>
+                <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
+                  <!-- card -->
+                  <div
+                    alt="card"
+                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                  >
+                    <header class="space-y-7">
+                      <!-- icon -->
+                      <div
+                        class="inline-block p-3 border border-white rounded-full bg-green"
+                      >
+                        <img src="./img/shield.svg" alt="shield icon" />
+                      </div>
 
-              <h4 class="font-bold text-2xl">Advanced inventory management</h4>
-            </header>
+                      <h4 class="text-2xl font-bold">
+                        Advanced inventory management
+                      </h4>
+                    </header>
 
-            <div class="space-y-7 mt-7">
-              <p class="text-gray-500">
-                Generate purchase orders and transfer stock based on inventory
-                forecasts and performance.
-              </p>
+                    <div class="space-y-7 mt-7">
+                      <p class="text-gray-500">
+                        Generate purchase orders and transfer stock based on
+                        inventory forecasts and performance.
+                      </p>
 
-              <!-- link -->
-              <a href="#" class="flex justify-between font-bold text-sm">
-                View all Mzoori POS features
-                <span class="ml-auto">
-                  <i class="fa-solid fa-chevron-right text-green"></i>
-                </span>
-              </a>
+                      <!-- link -->
+                      <a
+                        href="#"
+                        class="flex justify-between text-sm font-bold"
+                      >
+                        View all Mzoori POS features
+                        <span class="ml-auto">
+                          <i class="fa-solid fa-chevron-right text-green"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+
+                <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
+                  <!-- card -->
+                  <div
+                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                  >
+                    <header class="space-y-7">
+                      <!-- icon -->
+                      <div
+                        class="inline-block p-3 border border-white rounded-full bg-green"
+                      >
+                        <img src="./img/shield.svg" alt="shield icon" />
+                      </div>
+
+                      <h4 class="text-2xl font-bold">
+                        Custom staff permissions
+                      </h4>
+                    </header>
+
+                    <div class="space-y-7 mt-7">
+                      <p class="text-gray-500">
+                        Set permissions to control staff access in the POS
+                        system so you can delegate with peace of mind.
+                      </p>
+
+                      <!-- link -->
+                      <a
+                        href="#"
+                        class="flex justify-between text-sm font-bold"
+                      >
+                        View all Mzoori POS features
+                        <span class="ml-auto">
+                          <i class="fa-solid fa-chevron-right text-green"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+
+                <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
+                  <!-- card -->
+                  <div
+                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                  >
+                    <header class="space-y-7">
+                      <!-- icon -->
+                      <div
+                        class="inline-block p-3 border border-white rounded-full bg-green"
+                      >
+                        <img src="./img/shield.svg" alt="shield icon" />
+                      </div>
+
+                      <h4 class="text-2xl font-bold">Unified Reporting</h4>
+                    </header>
+
+                    <div class="space-y-7 mt-7">
+                      <p class="text-gray-500">
+                        Adapt to growing trends in your business with unified
+                        analytics that blend in-store and online sales.
+                      </p>
+
+                      <!-- link -->
+                      <a
+                        href="#"
+                        class="flex justify-between text-sm font-bold"
+                      >
+                        View all Mzoori POS features
+                        <span class="ml-auto">
+                          <i class="fa-solid fa-chevron-right text-green"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+
+                <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
+                  <!-- card -->
+                  <div
+                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                  >
+                    <header class="space-y-7">
+                      <!-- icon -->
+                      <div
+                        class="inline-block p-3 border border-white rounded-full bg-green"
+                      >
+                        <img src="./img/shield.svg" alt="shield icon" />
+                      </div>
+
+                      <h4 class="text-2xl font-bold">
+                        Advanced inventory management
+                      </h4>
+                    </header>
+
+                    <div class="space-y-7 mt-7">
+                      <p class="text-gray-500">
+                        Generate purchase orders and transfer stock based on
+                        inventory forecasts and performance.
+                      </p>
+
+                      <!-- link -->
+                      <a
+                        href="#"
+                        class="flex justify-between text-sm font-bold"
+                      >
+                        View all Mzoori POS features
+                        <span class="ml-auto">
+                          <i class="fa-solid fa-chevron-right text-green"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+
+                <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
+                  <!-- card -->
+                  <div
+                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                  >
+                    <header class="space-y-7">
+                      <!-- icon -->
+                      <div
+                        class="inline-block p-3 border border-white rounded-full bg-green"
+                      >
+                        <img src="./img/shield.svg" alt="shield icon" />
+                      </div>
+
+                      <h4 class="text-2xl font-bold">
+                        Send cart to buy online
+                      </h4>
+                    </header>
+
+                    <div class="space-y-7 mt-7">
+                      <p class="text-gray-500">
+                        Send customers an email with items they were interested
+                        in but didn't purchase in store.
+                      </p>
+
+                      <!-- link -->
+                      <a
+                        href="#"
+                        class="flex justify-between text-sm font-bold"
+                      >
+                        View all Mzoori POS features
+                        <span class="ml-auto">
+                          <i class="fa-solid fa-chevron-right text-green"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+
+                <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
+                  <!-- card -->
+                  <div
+                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                  >
+                    <header class="space-y-7">
+                      <!-- icon -->
+                      <div
+                        class="inline-block p-3 border border-white rounded-full bg-green"
+                      >
+                        <img src="./img/shield.svg" alt="shield icon" />
+                      </div>
+
+                      <h4 class="text-2xl font-bold">
+                        Custom staff permissions
+                      </h4>
+                    </header>
+
+                    <div class="space-y-7 mt-7">
+                      <p class="text-gray-500">
+                        Set permissions to control staff access in the POS
+                        system so you can delegate with peace of mind.
+                      </p>
+
+                      <!-- link -->
+                      <a
+                        href="#"
+                        class="flex justify-between text-sm font-bold"
+                      >
+                        View all Mzoori POS features
+                        <span class="ml-auto">
+                          <i class="fa-solid fa-chevron-right text-green"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          <!-- card -->
-          <div
-            class="bg-lightgreen rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
-          >
-            <header class="space-y-7">
-              <!-- icon -->
-              <div
-                class="bg-green border-white border inline-block rounded-full p-3"
+            <div
+              class="absolute top-0 z-10 flex justify-between w-full h-full px-4"
+            >
+              <button
+                x-on:click="prev"
+                :aria-disabled="atBeginning"
+                :tabindex="atEnd ? -1 : 0"
               >
-                <img src="./img/shield.svg" alt="shield icon" />
-              </div>
-
-              <h4 class="font-bold text-2xl">Custom staff permissions</h4>
-            </header>
-
-            <div class="space-y-7 mt-7">
-              <p class="text-gray-500">
-                Set permissions to control staff access in the POS system so you
-                can delegate with peace of mind.
-              </p>
-
-              <!-- link -->
-              <a href="#" class="flex justify-between font-bold text-sm">
-                View all Mzoori POS features
-                <span class="ml-auto">
-                  <i class="fa-solid fa-chevron-right text-green"></i>
+                <span class="hidden group-hover:block text-gray-50">
+                  <i class="fa-solid fa-arrow-left"></i>
                 </span>
-              </a>
-            </div>
-          </div>
-
-          <!-- card -->
-          <div
-            class="bg-lightgreen rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
-          >
-            <header class="space-y-7">
-              <!-- icon -->
-              <div
-                class="bg-green border-white border inline-block rounded-full p-3"
+              </button>
+              <button
+                x-on:click="next"
+                class="text-6xl"
+                :aria-disabled="atEnd"
+                :tabindex="atEnd ? -1 : 0"
               >
-                <img src="./img/shield.svg" alt="shield icon" />
-              </div>
-
-              <h4 class="font-bold text-2xl">Unified Reporting</h4>
-            </header>
-
-            <div class="space-y-7 mt-7">
-              <p class="text-gray-500">
-                Adapt to growing trends in your business with unified analytics
-                that blend in-store and online sales.
-              </p>
-
-              <!-- link -->
-              <a href="#" class="flex justify-between font-bold text-sm">
-                View all Mzoori POS features
-                <span class="ml-auto">
-                  <i class="fa-solid fa-chevron-right text-green"></i>
+                <span class="hidden group-hover:block text-gray-50">
+                  <i class="fa-solid fa-arrow-right"></i>
                 </span>
-              </a>
-            </div>
-          </div>
-
-          <!-- card -->
-          <div
-            class="bg-lightgreen rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
-          >
-            <header class="space-y-7">
-              <!-- icon -->
-              <div
-                class="bg-green border-white border inline-block rounded-full p-3"
-              >
-                <img src="./img/shield.svg" alt="shield icon" />
-              </div>
-
-              <h4 class="font-bold text-2xl">Advanced inventory management</h4>
-            </header>
-
-            <div class="space-y-7 mt-7">
-              <p class="text-gray-500">
-                Generate purchase orders and transfer stock based on inventory
-                forecasts and performance.
-              </p>
-
-              <!-- link -->
-              <a href="#" class="flex justify-between font-bold text-sm">
-                View all Mzoori POS features
-                <span class="ml-auto">
-                  <i class="fa-solid fa-chevron-right text-green"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <!-- card -->
-          <div
-            class="bg-lightgreen rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
-          >
-            <header class="space-y-7">
-              <!-- icon -->
-              <div
-                class="bg-green border-white border inline-block rounded-full p-3"
-              >
-                <img src="./img/shield.svg" alt="shield icon" />
-              </div>
-
-              <h4 class="font-bold text-2xl">Send cart to buy online</h4>
-            </header>
-
-            <div class="space-y-7 mt-7">
-              <p class="text-gray-500">
-                Send customers an email with items they were interested in but
-                didn't purchase in store.
-              </p>
-
-              <!-- link -->
-              <a href="#" class="flex justify-between font-bold text-sm">
-                View all Mzoori POS features
-                <span class="ml-auto">
-                  <i class="fa-solid fa-chevron-right text-green"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <!-- card -->
-          <div
-            class="bg-lightgreen rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
-          >
-            <header class="space-y-7">
-              <!-- icon -->
-              <div
-                class="bg-green border-white border inline-block rounded-full p-3"
-              >
-                <img src="./img/shield.svg" alt="shield icon" />
-              </div>
-
-              <h4 class="font-bold text-2xl">Custom staff permissions</h4>
-            </header>
-
-            <div class="space-y-7 mt-7">
-              <p class="text-gray-500">
-                Set permissions to control staff access in the POS system so you
-                can delegate with peace of mind.
-              </p>
-
-              <!-- link -->
-              <a href="#" class="flex justify-between font-bold text-sm">
-                View all Mzoori POS features
-                <span class="ml-auto">
-                  <i class="fa-solid fa-chevron-right text-green"></i>
-                </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
         <!-- / End Carousel -->
 
         <!-- Sales Pitch -->
-        <article class="grid grid-cols-5 gap-7 items-center">
-          <div class="space-y-10 col-span-2">
-            <h3 class="text-3xl font-bold text-green mt-12">
+        <article class="grid items-center grid-cols-5 gap-7">
+          <div class="col-span-2 space-y-10">
+            <h3 class="mt-12 text-3xl font-bold text-green">
               Power your retail business. Seize more sales
             </h3>
             <p>
@@ -457,7 +641,7 @@
               ></div>
             </div>
             <div class="">
-              <h4 class="font-bold text-2xl mb-5">
+              <h4 class="mb-5 text-2xl font-bold">
                 Buy online, pick up in store
               </h4>
               <p class="text-gray-500">
@@ -473,7 +657,7 @@
               ></div>
             </div>
             <div class="">
-              <h4 class="font-bold text-2xl mb-5">
+              <h4 class="mb-5 text-2xl font-bold">
                 Browse in store, buy online
               </h4>
               <p class="text-gray-500">
@@ -490,7 +674,7 @@
               ></div>
             </div>
             <div class="">
-              <h4 class="font-bold text-2xl mb-5">
+              <h4 class="mb-5 text-2xl font-bold">
                 Buy in store, ship to customer
               </h4>
               <p class="text-gray-500">
@@ -506,7 +690,7 @@
               ></div>
             </div>
             <div class="">
-              <h4 class="font-bold text-2xl mb-5">
+              <h4 class="mb-5 text-2xl font-bold">
                 Buy anywhere, return anywhere
               </h4>
               <p class="text-gray-500">
@@ -523,8 +707,8 @@
 
     <section class="mt-24 space-y-12">
       <header class="max-w-4xl mx-auto text-center">
-        <h2 class="font-bold text-4xl text-teal-900">Bring them back</h2>
-        <hr class="mx-auto my-5 w-36 border-teal-900" />
+        <h2 class="text-4xl font-bold text-teal-900">Bring them back</h2>
+        <hr class="mx-auto my-5 border-teal-900 w-36" />
         <p class="text-2xl">
           Turn one-time customers into lifetime fans with a point of sale system
           that supports your staff in creating meaningful customer
@@ -533,18 +717,18 @@
       </header>
 
       <!-- Cards -->
-      <div class="flex flex-row gap-x-5 items-stretch mx-auto w-max">
+      <div class="flex flex-row items-stretch mx-auto gap-x-5 w-max">
         <!-- card -->
         <div
-          class="shadow-sm border border-gray-200 rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
+          class="flex flex-col justify-between max-w-xs p-4 border border-gray-200 rounded-lg shadow-sm shrink-0"
         >
           <header class="space-y-7">
             <!-- icon -->
-            <div class="bg-gray-200 inline-block rounded-full p-3">
+            <div class="inline-block p-3 bg-gray-200 rounded-full">
               <img src="./img/shield.svg" alt="shield icon" />
             </div>
 
-            <h4 class="font-bold text-2xl">Fully synced customer profiles</h4>
+            <h4 class="text-2xl font-bold">Fully synced customer profiles</h4>
           </header>
 
           <div class="space-y-7 mt-7">
@@ -556,7 +740,7 @@
             <!-- link -->
             <a
               href="#"
-              class="flex justify-between font-bold text-sm text-teal-500"
+              class="flex justify-between text-sm font-bold text-teal-500"
             >
               View all Mzoori POS features
               <span class="ml-auto">
@@ -568,15 +752,15 @@
 
         <!-- card -->
         <div
-          class="shadow-sm border border-gray-200 rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
+          class="flex flex-col justify-between max-w-xs p-4 border border-gray-200 rounded-lg shadow-sm shrink-0"
         >
           <header class="space-y-7">
             <!-- icon -->
-            <div class="bg-gray-200 inline-block rounded-full p-3">
+            <div class="inline-block p-3 bg-gray-200 rounded-full">
               <img src="./img/shield.svg" alt="shield icon" />
             </div>
 
-            <h4 class="font-bold text-2xl">Effective marketing</h4>
+            <h4 class="text-2xl font-bold">Effective marketing</h4>
           </header>
 
           <div class="space-y-7 mt-7">
@@ -588,7 +772,7 @@
             <!-- link -->
             <a
               href="#"
-              class="flex justify-between font-bold text-sm text-teal-500"
+              class="flex justify-between text-sm font-bold text-teal-500"
             >
               View all Mzoori POS features
               <span class="ml-auto">
@@ -600,15 +784,15 @@
 
         <!-- card -->
         <div
-          class="shadow-sm border border-gray-200 rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
+          class="flex flex-col justify-between max-w-xs p-4 border border-gray-200 rounded-lg shadow-sm shrink-0"
         >
           <header class="space-y-7">
             <!-- icon -->
-            <div class="bg-gray-200 inline-block rounded-full p-3">
+            <div class="inline-block p-3 bg-gray-200 rounded-full">
               <img src="./img/shield.svg" alt="shield icon" />
             </div>
 
-            <h4 class="font-bold text-2xl">Integrated loyalty programs</h4>
+            <h4 class="text-2xl font-bold">Integrated loyalty programs</h4>
           </header>
 
           <div class="space-y-7 mt-7">
@@ -620,7 +804,7 @@
             <!-- link -->
             <a
               href="#"
-              class="flex justify-between font-bold text-sm text-teal-500"
+              class="flex justify-between text-sm font-bold text-teal-500"
             >
               View all Mzoori POS features
               <span class="ml-auto">
@@ -635,7 +819,7 @@
 
     <!-- About payments processing -->
     <div class="max-w-4xl mx-auto">
-      <article class="grid grid-cols-5 gap-7 items-center">
+      <article class="grid items-center grid-cols-5 gap-7">
         <div class="col-span-3">
           <img
             src="./img/pos-desktop-mockup-3.png"
@@ -644,8 +828,8 @@
           />
         </div>
 
-        <div class="space-y-10 col-span-2">
-          <h3 class="text-4xl font-bold text-green mt-12">
+        <div class="col-span-2 space-y-10">
+          <h3 class="mt-12 text-4xl font-bold text-green">
             Powerful POS hardware you can count on
           </h3>
           <p>
@@ -657,7 +841,7 @@
           <!-- CTA -->
           <a
             href="#"
-            class="flex justify-between font-bold text-sm text-teal-500"
+            class="flex justify-between text-sm font-bold text-teal-500"
           >
             Learn more about POS hardware
             <span class="ml-auto">
@@ -669,16 +853,16 @@
     </div>
     <!-- / End About payments processing -->
 
-    <div class="relative overflow-hidden mt-12">
+    <div class="relative overflow-hidden">
       <!-- Resources Section -->
-      <section class="relative">
+      <section class="relative z-20">
         <div
-          class="-translate-x-36 bg-green backdrop-blur-[5rem] border border-[1.7] border-white rounded-lg bg-gradient-to-b from-white/50 from-5% to-110%"
+          class="-translate-x-28 translate-y-24 backdrop-blur-[5rem] border border-[1.7] border-white rounded-lg bg-gradient-to-b from-white/50 from-5% to-110% shadow-xl"
         >
-          <div class="container translate-x-72 translate-y-20">
+          <div class="container translate-y-20 translate-x-72">
             <!-- Container -->
             <header class="grid grid-cols-2 gap-x-32 max-w-[75%] mb-12">
-              <h2 class="font-bold text-4xl">Resources for your business</h2>
+              <h2 class="text-4xl font-bold">Resources for your business</h2>
               <p class="">
                 Discover up-and-coming trends, access free guides, and learn how
                 business owners like you use Mzoori's POS system to level up.
@@ -686,18 +870,18 @@
             </header>
 
             <!-- Cards -->
-            <div class="flex flex-row gap-x-5 items-stretch">
+            <div class="flex flex-row items-stretch gap-x-5">
               <!-- card -->
               <div
-                class="shadow-sm border bg-white border-gray-200 rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
+                class="flex flex-col justify-between max-w-xs p-4 bg-white border border-gray-200 rounded-lg shadow-sm shrink-0"
               >
                 <header class="space-y-7">
                   <!-- icon -->
-                  <div class="bg-gray-200 inline-block rounded-full p-3">
+                  <div class="inline-block p-3 bg-gray-200 rounded-full">
                     <img src="./img/shield.svg" alt="shield icon" />
                   </div>
 
-                  <h4 class="font-bold text-2xl">SeaVees</h4>
+                  <h4 class="text-2xl font-bold">SeaVees</h4>
                 </header>
 
                 <div class="space-y-7 mt-7">
@@ -709,7 +893,7 @@
                   <!-- link -->
                   <a
                     href="#"
-                    class="flex justify-between font-bold text-sm text-teal-500"
+                    class="flex justify-between text-sm font-bold text-teal-500"
                   >
                     View all Mzoori POS features
                     <span class="ml-auto">
@@ -721,15 +905,15 @@
 
               <!-- card -->
               <div
-                class="shadow-sm border bg-white border-gray-200 rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
+                class="flex flex-col justify-between max-w-xs p-4 bg-white border border-gray-200 rounded-lg shadow-sm shrink-0"
               >
                 <header class="space-y-7">
                   <!-- icon -->
-                  <div class="bg-gray-200 inline-block rounded-full p-3">
+                  <div class="inline-block p-3 bg-gray-200 rounded-full">
                     <img src="./img/shield.svg" alt="shield icon" />
                   </div>
 
-                  <h4 class="font-bold text-2xl">Lively</h4>
+                  <h4 class="text-2xl font-bold">Lively</h4>
                 </header>
 
                 <div class="space-y-7 mt-7">
@@ -741,7 +925,7 @@
                   <!-- link -->
                   <a
                     href="#"
-                    class="flex justify-between font-bold text-sm text-teal-500"
+                    class="flex justify-between text-sm font-bold text-teal-500"
                   >
                     View all Mzoori POS features
                     <span class="ml-auto">
@@ -753,15 +937,15 @@
 
               <!-- card -->
               <div
-                class="shadow-sm border bg-white border-gray-200 rounded-lg p-4 max-w-xs shrink-0 flex flex-col justify-between"
+                class="flex flex-col justify-between max-w-xs p-4 bg-white border border-gray-200 rounded-lg shadow-sm shrink-0"
               >
                 <header class="space-y-7">
                   <!-- icon -->
-                  <div class="bg-gray-200 inline-block rounded-full p-3">
+                  <div class="inline-block p-3 bg-gray-200 rounded-full">
                     <img src="./img/shield.svg" alt="shield icon" />
                   </div>
 
-                  <h4 class="font-bold text-2xl">Nalata Nalata</h4>
+                  <h4 class="text-2xl font-bold">Nalata Nalata</h4>
                 </header>
 
                 <div class="space-y-7 mt-7">
@@ -773,7 +957,7 @@
                   <!-- link -->
                   <a
                     href="#"
-                    class="flex justify-between font-bold text-sm text-teal-500"
+                    class="flex justify-between text-sm font-bold text-teal-500"
                   >
                     View all Mzoori POS features
                     <span class="ml-auto">
@@ -789,163 +973,255 @@
       </section>
       <!-- / End Resources Section -->
 
-      <div class="mt-48 mb-16 max-w-md mx-auto">
-        <h2 class="text-4xl font-bold mb-3">
-          Our customer reviews speak for themselves
-        </h2>
-        <p>
-          <a href="#" class="text-orange py-2"
-            >Read real customer reviews on G2
-            <span class="ml-9">
-              <i class="fa-solid fa-chevron-right"></i>
-            </span>
-          </a>
-        </p>
-      </div>
+      <div class="bg-green relative w-full z-10">
+        <div class="lg:max-w-6xl lg:px-20 mx-auto pt-72">
+          <h2 class="mb-3 text-4xl font-bold text-white lg:max-w-2xl">
+            Our customer reviews speak for themselves
+          </h2>
+          <p>
+            <a href="#" class="py-2 text-orange"
+              >Read real customer reviews on G2
+              <span class="ml-9">
+                <i class="fa-solid fa-chevron-right"></i>
+              </span>
+            </a>
+          </p>
+        </div>
 
-      <!-- Book a Call Section -->
-      <section class="relative max-w-6xl mx-auto">
-        <div
-          class="grid grid-cols-5 pt-20 pl-20 backdrop-blur-[5rem] border-[1.7] border-white rounded-lg bg-gradient-to-b from-green/50 from-5% to-110%"
-        >
-          <div class="flex flex-col col-span-3 space-y-8">
-            <h2 class="text-4xl font-bold">
-              Let us be part of your growth journey
-            </h2>
+        <!-- Book a Call Section -->
+        <section class="relative max-w-6xl mx-auto text-white translate-y-20">
+          <div
+            class="grid grid-cols-5 pt-20 pl-20 backdrop-blur-[5rem] border border-[1.7] border-white rounded-lg bg-gradient-to-b from-white/50 from-5% to-110% shadow-xl"
+          >
+            <div class="flex flex-col col-span-3 space-y-8">
+              <h2 class="text-4xl font-bold">
+                Let us be part of your growth journey
+              </h2>
 
-            <p class="">
-              Our ultimate vision is to bring producers closer to their
-              consumers through retailers like you. We believe technology is
-              unlocking the potential of retail and we'd love to partner with
-              you and move your business forward.
-            </p>
+              <p class="">
+                Our ultimate vision is to bring producers closer to their
+                consumers through retailers like you. We believe technology is
+                unlocking the potential of retail and we'd love to partner with
+                you and move your business forward.
+              </p>
 
-            <div class="p-8 mt-8 bg-white/20">
-              <h4 class="text-xl font-bold mb-5">
-                Do you own or think of setting up a retail outlet? Talk to us.
-              </h4>
-              <!-- link -->
-              <a href="#" class="font-bold text-sm text-teal-500">
-                Book a call
-                <span class="ml-3">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </span>
-              </a>
+              <div class="p-8 mt-8 bg-white/20 rounded">
+                <h4 class="mb-5 text-xl font-bold max-w-sm">
+                  Do you own or think of setting up a retail outlet? Talk to us.
+                </h4>
+                <!-- link -->
+                <a href="#" class="text-sm font-bold text-green">
+                  Book a call
+                  <span class="ml-3">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-span-2 relative">
+              <img class="-mt-64" src="./img/model.png" alt="Mzoori Model" />
             </div>
           </div>
+        </section>
+        <!-- / End Book a Call Section -->
+      </div>
 
-          <div class="col-span-2">
-            <img
-              class="object-scale-down"
-              src="./img/model.png"
-              alt="Mzoori Model"
-            />
+      <!-- FAQ Section -->
+      <section
+        id="faq"
+        class="relative z-0 lg:px-44 lg:pt-48 lg:pb-32 bg-gray-100"
+      >
+        <div class="mx-auto">
+          <h2 class="mb-12 text-4xl font-bold">Frequently asked questions</h2>
+
+          <div id="accordion" class="space-y-5">
+            <div class="bg-white shadow-lg rounded-lg" x-data="{open:false}">
+              <h4 class="text-2xl font-bold">
+                <button
+                  type="button"
+                  @click="open=!open"
+                  class="flex items-center w-full px-6 py-8 gap-9"
+                  data-target="accordion-body-1"
+                >
+                  <span
+                    x-show="!open"
+                    x-transition
+                    x-cloak
+                    class="transition text-green"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                  <span
+                    x-show="open"
+                    x-transition
+                    x-cloak
+                    class="transition text-orange"
+                    ><i class="fa-solid fa-minus"></i
+                  ></span>
+                  <span>What is a POS example?</span>
+                </button>
+              </h4>
+
+              <div
+                id="accordion-body-1"
+                x-show="open"
+                x-collapse
+                x-cloak
+                class="px-6 pb-6"
+              >
+                <p class="ml-12">
+                  A point of sale, or POS, is a system for making sales in
+                  person. It's the device and/or software that you use to
+                  process transactions and accept payments, likely from your
+                  retail store.
+                </p>
+                <p class="ml-12 mt-4">
+                  With Mzoori POS, retail businesses get all the tools they need
+                  to manage daily operations, accept payments anywhere, and
+                  build relationships with their customers. But the benefits of
+                  Mzoori go beyond your retail store. With a powerful ecommerce
+                  solution also included, Mzoori unifies in-store and online
+                  sales to bridge the gaps between your website, social media,
+                  and POS. This allows you to sync inventory everywhere you sell
+                  and offer seamless shopping options for customers like local
+                  pickup, local delivery, ship-to-home, and email carts.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg" x-data="{open:false}">
+              <h4 class="text-2xl font-bold">
+                <button
+                  type="button"
+                  @click="open=!open"
+                  class="flex items-center w-full px-6 py-8 gap-9"
+                  data-target="accordion-body-2"
+                >
+                  <span
+                    x-show="!open"
+                    x-transition
+                    x-cloak
+                    class="transition text-green"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                  <span
+                    x-show="open"
+                    x-transition
+                    x-cloak
+                    class="transition text-orange"
+                    ><i class="fa-solid fa-minus"></i
+                  ></span>
+                  <span>What is a POS example?</span>
+                </button>
+              </h4>
+
+              <div
+                id="accordion-body-2"
+                x-show="open"
+                x-collapse
+                x-cloak
+                class="px-6 pb-6 transition"
+              >
+                <p class="ml-12">
+                  A point of sale, or POS, is a system for making sales in
+                  person. It's the device and/or software that you use to
+                  process transactions and accept payments, likely from your
+                  retail store.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg" x-data="{open:false}">
+              <h4 class="text-2xl font-bold">
+                <button
+                  type="button"
+                  @click="open=!open"
+                  class="flex items-center w-full px-6 py-8 gap-9"
+                  data-target="accordion-body-3"
+                >
+                  <span
+                    x-show="!open"
+                    x-transition
+                    x-cloak
+                    class="transition text-green"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                  <span
+                    x-show="open"
+                    x-transition
+                    x-cloak
+                    class="transition text-orange"
+                    ><i class="fa-solid fa-minus"></i
+                  ></span>
+                  <span>What is a POS example?</span>
+                </button>
+              </h4>
+
+              <div
+                id="accordion-body-3"
+                x-show="open"
+                x-collapse
+                x-cloak
+                class="px-6 pb-6 transition"
+              >
+                <p class="ml-12">
+                  A point of sale, or POS, is a system for making sales in
+                  person. It's the device and/or software that you use to
+                  process transactions and accept payments, likely from your
+                  retail store.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg" x-data="{open:false}">
+              <h4 class="text-2xl font-bold">
+                <button
+                  type="button"
+                  @click="open=!open"
+                  class="flex items-center w-full px-6 py-8 gap-9"
+                  data-target="accordion-body-4"
+                >
+                  <span
+                    x-show="!open"
+                    x-transition
+                    x-cloak
+                    class="transition text-green"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                  <span
+                    x-show="open"
+                    x-transition
+                    x-cloak
+                    class="transition text-orange"
+                    ><i class="fa-solid fa-minus"></i
+                  ></span>
+                  <span>What is a POS example?</span>
+                </button>
+              </h4>
+
+              <div
+                id="accordion-body-4"
+                x-show="open"
+                x-collapse
+                x-cloak
+                class="px-6 pb-6 transition"
+              >
+                <p class="ml-12">
+                  A point of sale, or POS, is a system for making sales in
+                  person. It's the device and/or software that you use to
+                  process transactions and accept payments, likely from your
+                  retail store.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <!-- / End Book a Call Section -->
+      <!-- / End FAQ Section -->
     </div>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="pt-48 pb-32 px-56 bg-gray-100">
-      <div class="mx-auto">
-        <h2 class="font-bold text-4xl mb-12">Frequently asked questions</h2>
-
-        <div id="accordion" class="space-y-5">
-          <div class="bg-white shadow-lg">
-            <h4 class="font-bold text-2xl">
-              <button
-                type="button"
-                class="w-full py-8 px-6 flex items-center"
-                data-target="accordion-body-1"
-              >
-                <span class="mr-9 hidden">+</span>
-                <span class="mr-9">-</span>
-                <span>What is a POS (point of sale)?</span>
-              </button>
-            </h4>
-
-            <div id="accordion-body-1" class="px-6 pb-4">
-              <p class="ml-12">
-                A point of sale, or POS, is a system for making sales in person.
-                It's the device and/or software that you use to process
-                transactions and accept payments, likely from your retail store.
-              </p>
-            </div>
-          </div>
-
-          <div class="bg-white shadow-lg">
-            <h4 class="font-bold text-2xl">
-              <button
-                type="button"
-                class="w-full py-8 px-6 flex items-center"
-                data-target="accordion-body-2"
-              >
-                <span class="mr-9 hidden">+</span>
-                <span class="mr-9">-</span>
-                <span>What is a POS example?</span>
-              </button>
-            </h4>
-
-            <div id="accordion-body-2" class="px-6 pb-4">
-              <p class="ml-12">
-                A point of sale, or POS, is a system for making sales in person.
-                It's the device and/or software that you use to process
-                transactions and accept payments, likely from your retail store.
-              </p>
-            </div>
-          </div>
-
-          <div class="bg-white shadow-lg">
-            <h4 class="font-bold text-2xl">
-              <button
-                type="button"
-                class="w-full py-8 px-6 flex items-center"
-                data-target="accordion-body-3"
-              >
-                <span class="mr-9 hidden">+</span>
-                <span class="mr-9">-</span>
-                <span>What is a POS example?</span>
-              </button>
-            </h4>
-
-            <div id="accordion-body-3" class="px-6 pb-4">
-              <p class="ml-12">
-                A point of sale, or POS, is a system for making sales in person.
-                It's the device and/or software that you use to process
-                transactions and accept payments, likely from your retail store.
-              </p>
-            </div>
-          </div>
-
-          <div class="bg-white shadow-lg">
-            <h4 class="font-bold text-2xl">
-              <button
-                type="button"
-                class="w-full py-8 px-6 flex items-center"
-                data-target="accordion-body-4"
-              >
-                <span class="mr-9 hidden">+</span>
-                <span class="mr-9">-</span>
-                <span>What is a POS example?</span>
-              </button>
-            </h4>
-
-            <div id="accordion-body-4" class="px-6 pb-4">
-              <p class="ml-12">
-                A point of sale, or POS, is a system for making sales in person.
-                It's the device and/or software that you use to process
-                transactions and accept payments, likely from your retail store.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- / End FAQ Section -->
-
     <!-- Footer Section -->
-    <footer class="pt-32 pb-16 px-48 text-white text-center bg-green relative">
+    <footer class="relative px-48 pt-32 pb-16 text-center text-white bg-green">
       <!-- Light Accent -->
       <div
         class="h-full w-full absolute top-0 left-0 bg-[url('/img/light-accent-2.png')] bg-right-bottom bg-no-repeat z-0 rotate-180"
@@ -953,7 +1229,7 @@
       ></div>
       <!-- / End Light Accent -->
 
-      <div class="space-y-4 relative z-10">
+      <div class="relative z-10 space-y-4">
         <h4 class="font-bold text-5xl leading-[3.825rem]">
           Not just e-commerce. <br />
           <span class="text-orange">All commerce.</span>
@@ -988,7 +1264,7 @@
 
       <hr class="my-16 border-white/20" />
 
-      <div class="flex justify-between items-center relative z-10">
+      <div class="relative z-10 flex items-center justify-between">
         <p class="text-sm">&copy; 2021 @mzoori. All Rights Reserved</p>
         <div id="social-links" class="space-x-4">
           <a
