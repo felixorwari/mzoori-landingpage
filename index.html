@@ -42,6 +42,15 @@
       src="https://kit.fontawesome.com/c5314f6096.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- alpine js -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+
+    <style>
+      [x-cloak] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <!-- Landing Page Header -->
@@ -156,9 +165,13 @@
       </div>
     </section>
 
-    <section class="relative max-w-4xl mx-auto mt-12 space-y-28">
-      <article class="grid items-center grid-cols-7 px-20 gap-28">
-        <div class="order-2 col-span-3">
+    <section
+      class="relative px-4 mx-auto mt-12 space-y-12 lg:max-w-6xl lg:space-y-28"
+    >
+      <article
+        class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20 lg:gap-28"
+      >
+        <div class="lg:order-2 lg:col-span-3">
           <h2 class="mt-20 mb-8 text-3xl font-bold">
             Fully integrated hardware
           </h2>
@@ -168,16 +181,19 @@
             compatible hardware accessories.
           </p>
         </div>
-        <div class="order-1 col-span-4">
+        <div class="lg:order-1 lg:col-span-4">
           <img
             src="./img/pos-desktop-mockup-2.png"
+            class="object-cover"
             alt="pos machine with desktop pc"
           />
         </div>
       </article>
 
-      <article class="grid items-center grid-cols-7 px-20 gap-28">
-        <div class="col-span-3">
+      <article
+        class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20 lg:gap-28"
+      >
+        <div class="lg:col-span-3">
           <h2 class="mt-20 mb-8 text-3xl font-bold">
             Customizable POS terminal
           </h2>
@@ -187,17 +203,19 @@
             through checkout.
           </p>
         </div>
-        <div class="col-span-4">
+        <div class="lg:col-span-4">
           <img
-            class="scale-150"
+            class="object-cover lg:scale-150"
             src="./img/pos-desktop-mockup-2.png"
             alt="pos machine with desktop pc"
           />
         </div>
       </article>
 
-      <article class="grid items-center grid-cols-7 px-20 gap-28">
-        <div class="order-2 col-span-3">
+      <article
+        class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20 lg:gap-28"
+      >
+        <div class="lg:order-2 lg:col-span-3">
           <h2 class="mt-20 mb-8 text-3xl font-bold">Powerful POS software</h2>
           <p class="text-gray-500">
             Turn any mobile device into a powerful point of sale. You can
@@ -205,9 +223,9 @@
             tablet.
           </p>
         </div>
-        <div class="order-1 col-span-4">
+        <div class="lg:order-1 lg:col-span-4">
           <img
-            class=""
+            class="object-cover"
             src="./img/pos-desktop-mockup-2.png"
             alt="pos machine with desktop pc"
           />
@@ -231,10 +249,13 @@
 
         <!-- Carousel -->
         <div
-          class="flex gap-6 overflow-x-scroll scroll-smooth snap-start snap-x"
+          x-data="carousel()"
+          class="flex gap-6 overflow-x-scroll scroll-smooth snap-start snap-x relative"
         >
           <!-- card -->
           <div
+            :src="images[selected]"
+            alt="card"
             class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0"
           >
             <header class="space-y-7">
@@ -418,6 +439,17 @@
               </a>
             </div>
           </div>
+
+          <button
+            class="absolute inset-y-0 left-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer"
+          >
+            <span class="hidden group-hover:block text-gray-50"> &larr; </span>
+          </button>
+          <button
+            class="absolute inset-y-0 right-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer"
+          >
+            <span class="hidden group-hover:block text-gray-50"> &rarr; </span>
+          </button>
         </div>
         <!-- / End Carousel -->
 
@@ -861,20 +893,27 @@
         <h2 class="mb-12 text-4xl font-bold">Frequently asked questions</h2>
 
         <div id="accordion" class="space-y-5">
-          <div class="bg-white shadow-lg">
+          <div class="bg-white shadow-lg" x-data="{open:false}">
+            <button></button>
             <h4 class="text-2xl font-bold">
               <button
                 type="button"
                 class="flex items-center w-full px-6 py-8"
+                @click="open=!open"
                 data-target="accordion-body-1"
               >
-                <span class="hidden mr-9">+</span>
-                <span class="mr-9">-</span>
+                <span x-show="!open" class="mr-9 transition">+</span>
+                <span x-show="open" class="mr-9 transition">-</span>
                 <span>What is a POS (point of sale)?</span>
               </button>
             </h4>
 
-            <div id="accordion-body-1" class="px-6 pb-4">
+            <div
+              id="accordion-body-1"
+              x-show="open"
+              x-cloak
+              class="px-6 pb-4 transition"
+            >
               <p class="ml-12">
                 A point of sale, or POS, is a system for making sales in person.
                 It's the device and/or software that you use to process
@@ -883,20 +922,26 @@
             </div>
           </div>
 
-          <div class="bg-white shadow-lg">
+          <div class="bg-white shadow-lg" x-data="{open:false}">
             <h4 class="text-2xl font-bold">
               <button
                 type="button"
+                @click="open=!open"
                 class="flex items-center w-full px-6 py-8"
                 data-target="accordion-body-2"
               >
-                <span class="hidden mr-9">+</span>
-                <span class="mr-9">-</span>
+                <span x-show="!open" class="mr-9 transition">+</span>
+                <span x-show="open" class="mr-9 transition">-</span>
                 <span>What is a POS example?</span>
               </button>
             </h4>
 
-            <div id="accordion-body-2" class="px-6 pb-4">
+            <div
+              id="accordion-body-2"
+              x-show="open"
+              x-cloak
+              class="px-6 pb-4 transition"
+            >
               <p class="ml-12">
                 A point of sale, or POS, is a system for making sales in person.
                 It's the device and/or software that you use to process
@@ -905,20 +950,26 @@
             </div>
           </div>
 
-          <div class="bg-white shadow-lg">
+          <div class="bg-white shadow-lg" x-data="{open:false}">
             <h4 class="text-2xl font-bold">
               <button
                 type="button"
+                @click="open=!open"
                 class="flex items-center w-full px-6 py-8"
                 data-target="accordion-body-3"
               >
-                <span class="hidden mr-9">+</span>
-                <span class="mr-9">-</span>
+                <span x-show="!open" class="mr-9 transition">+</span>
+                <span x-show="open" class="mr-9 transition">-</span>
                 <span>What is a POS example?</span>
               </button>
             </h4>
 
-            <div id="accordion-body-3" class="px-6 pb-4">
+            <div
+              id="accordion-body-3"
+              x-show="open"
+              x-cloak
+              class="px-6 pb-4 transition"
+            >
               <p class="ml-12">
                 A point of sale, or POS, is a system for making sales in person.
                 It's the device and/or software that you use to process
@@ -927,20 +978,26 @@
             </div>
           </div>
 
-          <div class="bg-white shadow-lg">
+          <div class="bg-white shadow-lg" x-data="{open:false}">
             <h4 class="text-2xl font-bold">
               <button
                 type="button"
+                @click="open=!open"
                 class="flex items-center w-full px-6 py-8"
                 data-target="accordion-body-4"
               >
-                <span class="hidden mr-9">+</span>
-                <span class="mr-9">-</span>
+                <span x-show="!open" class="mr-9 transition">+</span>
+                <span x-show="open" class="mr-9 transition">-</span>
                 <span>What is a POS example?</span>
               </button>
             </h4>
 
-            <div id="accordion-body-4" class="px-6 pb-4">
+            <div
+              id="accordion-body-4"
+              x-cloak
+              x-show="open"
+              class="px-6 pb-4 transition"
+            >
               <p class="ml-12">
                 A point of sale, or POS, is a system for making sales in person.
                 It's the device and/or software that you use to process
@@ -1035,4 +1092,6 @@
     </footer>
     <!-- /End Footer Section -->
   </body>
+
+  <script></script>
 </html>
