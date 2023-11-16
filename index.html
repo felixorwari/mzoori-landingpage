@@ -64,7 +64,7 @@
 
     <style>
       [x-cloak] {
-        display: none;
+        display: none !important;
       }
     </style>
   </head>
@@ -72,7 +72,7 @@
     <!-- Landing Page Header -->
     <header
       id="hero"
-      class="flex flex-col items-center justify-center min-h-screen pt-24 lg:pt-32 pb-44 lg:pb-56 bg-green bg-top bg-no-repeat bg-cover relative"
+      class="relative flex flex-col items-center justify-center min-h-screen pt-24 bg-top bg-no-repeat bg-cover lg:pt-32 pb-44 lg:pb-56 bg-green"
     >
       <!-- Light Accents -->
       <div
@@ -100,7 +100,7 @@
       </div>
       <!-- / End Logo -->
 
-      <hr class="mx-auto my-8 w-36 border-white/30" />
+      <hr class="mx-auto mb-8 w-36 border-white/30" />
 
       <!-- Heading -->
       <div
@@ -142,7 +142,7 @@
     </header>
     <!-- /End Landing Page Header -->
 
-    <section class="relative px-4 mx-auto lg:max-w-6xl">
+    <article class="relative px-4 mx-auto lg:max-w-6xl">
       <div
         class="grid lg:grid-cols-7 pt-12 lg:pt-20 pb-12 lg:pb-36 px-6 lg:pl-20 lg:pr-0 backdrop-blur-[5rem] border border-[1.7] border-white rounded-lg bg-gradient-to-b from-white/50 from-5% to-110% -mt-16 lg:-mt-28 shadow-xl"
       >
@@ -171,22 +171,20 @@
           </div>
         </div>
 
-        <div class="relative lg:col-span-4">
+        <figure class="relative lg:col-span-4">
           <img
             class="mt-12 lg:-mt-24 lg:absolute lg:right-0 lg:scale-[1.08] lg:-top-8 origin-right"
             src="./img/pos-desktop-mockup.png"
             alt="POS Machine Desktop"
           />
-        </div>
+        </figure>
       </div>
-    </section>
+    </article>
 
     <section
-      class="relative px-4 mx-auto mt-12 space-y-12 lg:max-w-6xl lg:space-y-28"
+      class="relative px-4 mx-auto mt-12 space-y-12 lg:max-w-6xl lg:space-y-20"
     >
-      <article
-        class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20 lg:gap-28"
-      >
+      <article class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20">
         <div class="lg:order-2 lg:col-span-3">
           <h2 class="mt-20 mb-8 text-3xl font-bold">
             Fully integrated hardware
@@ -206,9 +204,7 @@
         </div>
       </article>
 
-      <article
-        class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20 lg:gap-28"
-      >
+      <article class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20">
         <div class="lg:col-span-3">
           <h2 class="mt-20 mb-8 text-3xl font-bold">
             Customizable POS terminal
@@ -228,9 +224,7 @@
         </div>
       </article>
 
-      <article
-        class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20 lg:gap-28"
-      >
+      <article class="grid items-center px-6 lg:gap-16 lg:grid-cols-7 lg:px-20">
         <div class="lg:order-2 lg:col-span-3">
           <h2 class="mt-20 mb-8 text-3xl font-bold">Powerful POS software</h2>
           <p class="text-gray-500">
@@ -251,7 +245,7 @@
 
     <!-- Tools & More Features -->
     <section
-      class="max-w-[83%] mt-28 ml-auto rounded-tl-lg rounded-bl-lg bg-gradient-to-b from-green/20 from-5% to-110% shadow-lg"
+      class="max-w-[83%] mt-28 mx-auto rounded-lg bg-gradient-to-b from-green/20 from-5% to-110% shadow-lg"
     >
       <div class="px-20 py-20 space-y-12">
         <header class="grid grid-cols-2 gap-x-32 max-w-[75%]">
@@ -334,7 +328,7 @@
             >
               <ul
                 x-ref="slider"
-                class="flex w-full gap-6 overflow-x-hidden scroll-smooth snap-mandatory snap-x relative"
+                class="relative flex w-full gap-6 overflow-x-hidden scroll-smooth snap-mandatory snap-x"
                 @scroll="updateCurrentSlide"
                 tabindex="0"
                 role="listbox"
@@ -344,7 +338,7 @@
                   <!-- card -->
                   <div
                     alt="card"
-                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                    class="flex flex-col justify-between h-full max-w-xs p-4 rounded-lg bg-lightgreen shrink-0"
                   >
                     <header class="space-y-7">
                       <!-- icon -->
@@ -382,7 +376,7 @@
                 <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
                   <!-- card -->
                   <div
-                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                    class="flex flex-col justify-between h-full max-w-xs p-4 rounded-lg bg-lightgreen shrink-0"
                   >
                     <header class="space-y-7">
                       <!-- icon -->
@@ -420,7 +414,7 @@
                 <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
                   <!-- card -->
                   <div
-                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                    class="flex flex-col justify-between h-full max-w-xs p-4 rounded-lg bg-lightgreen shrink-0"
                   >
                     <header class="space-y-7">
                       <!-- icon -->
@@ -456,7 +450,7 @@
                 <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
                   <!-- card -->
                   <div
-                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                    class="flex flex-col justify-between h-full max-w-xs p-4 rounded-lg bg-lightgreen shrink-0"
                   >
                     <header class="space-y-7">
                       <!-- icon -->
@@ -494,7 +488,7 @@
                 <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
                   <!-- card -->
                   <div
-                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                    class="flex flex-col justify-between h-full max-w-xs p-4 rounded-lg bg-lightgreen shrink-0"
                   >
                     <header class="space-y-7">
                       <!-- icon -->
@@ -532,7 +526,7 @@
                 <li x-bind="disableNextAndPreviousButtons" class="shrink-0">
                   <!-- card -->
                   <div
-                    class="flex flex-col justify-between max-w-xs p-4 rounded-lg bg-lightgreen shrink-0 h-full"
+                    class="flex flex-col justify-between h-full max-w-xs p-4 rounded-lg bg-lightgreen shrink-0"
                   >
                     <header class="space-y-7">
                       <!-- icon -->
@@ -973,8 +967,8 @@
       </section>
       <!-- / End Resources Section -->
 
-      <div class="bg-green relative w-full z-10">
-        <div class="lg:max-w-6xl lg:px-20 mx-auto pt-72">
+      <div class="relative z-10 w-full bg-green">
+        <div class="mx-auto lg:max-w-6xl lg:px-20 pt-72">
           <h2 class="mb-3 text-4xl font-bold text-white lg:max-w-2xl">
             Our customer reviews speak for themselves
           </h2>
@@ -1005,8 +999,8 @@
                 you and move your business forward.
               </p>
 
-              <div class="p-8 mt-8 bg-white/20 rounded">
-                <h4 class="mb-5 text-xl font-bold max-w-sm">
+              <div class="p-8 mt-8 rounded bg-white/20">
+                <h4 class="max-w-sm mb-5 text-xl font-bold">
                   Do you own or think of setting up a retail outlet? Talk to us.
                 </h4>
                 <!-- link -->
@@ -1019,7 +1013,7 @@
               </div>
             </div>
 
-            <div class="col-span-2 relative">
+            <div class="relative col-span-2">
               <img class="-mt-64" src="./img/model.png" alt="Mzoori Model" />
             </div>
           </div>
@@ -1030,13 +1024,13 @@
       <!-- FAQ Section -->
       <section
         id="faq"
-        class="relative z-0 lg:px-44 lg:pt-48 lg:pb-32 bg-gray-100"
+        class="relative z-0 bg-gray-100 lg:px-44 lg:pt-48 lg:pb-32"
       >
-        <div class="mx-auto">
+        <article class="mx-auto">
           <h2 class="mb-12 text-4xl font-bold">Frequently asked questions</h2>
 
           <div id="accordion" class="space-y-5">
-            <div class="bg-white shadow-lg rounded-lg" x-data="{open:false}">
+            <div class="bg-white rounded-lg shadow-lg" x-data="{open:false}">
               <h4 class="text-2xl font-bold">
                 <button
                   type="button"
@@ -1075,7 +1069,7 @@
                   process transactions and accept payments, likely from your
                   retail store.
                 </p>
-                <p class="ml-12 mt-4">
+                <p class="mt-4 ml-12">
                   With Mzoori POS, retail businesses get all the tools they need
                   to manage daily operations, accept payments anywhere, and
                   build relationships with their customers. But the benefits of
@@ -1089,7 +1083,7 @@
               </div>
             </div>
 
-            <div class="bg-white shadow-lg rounded-lg" x-data="{open:false}">
+            <div class="bg-white rounded-lg shadow-lg" x-data="{open:false}">
               <h4 class="text-2xl font-bold">
                 <button
                   type="button"
@@ -1131,7 +1125,7 @@
               </div>
             </div>
 
-            <div class="bg-white shadow-lg rounded-lg" x-data="{open:false}">
+            <div class="bg-white rounded-lg shadow-lg" x-data="{open:false}">
               <h4 class="text-2xl font-bold">
                 <button
                   type="button"
@@ -1173,7 +1167,7 @@
               </div>
             </div>
 
-            <div class="bg-white shadow-lg rounded-lg" x-data="{open:false}">
+            <div class="bg-white rounded-lg shadow-lg" x-data="{open:false}">
               <h4 class="text-2xl font-bold">
                 <button
                   type="button"
@@ -1215,7 +1209,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </section>
       <!-- / End FAQ Section -->
     </div>
