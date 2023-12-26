@@ -1,0 +1,29 @@
+{
+  "name": "mzoori-landingpage",
+  "version": "1.0.0",
+  "description": "Landing page for Mzoori POS System by RetailPay",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixorwari/mzoori-landingpage.git"
+  },
+  "keywords": [
+    "mzoori",
+    "pos",
+    "system",
+    "retailpay",
+    "payments",
+    "point",
+    "of",
+    "sale"
+  ],
+  "author": "Felix Orwari",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/felixorwari/mzoori-landingpage/issues"
+  },
+  "homepage": "https://github.com/felixorwari/mzoori-landingpage#readme"
+}
