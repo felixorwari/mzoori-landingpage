@@ -1,6 +1,6 @@
 {
   "name": "mzoori-landingpage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Landing page for Mzoori POS System by RetailPay",
   "main": "index.js",
   "scripts": {
